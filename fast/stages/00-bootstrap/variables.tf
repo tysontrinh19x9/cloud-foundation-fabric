@@ -102,8 +102,8 @@ variable "fast_features" {
     teams           = bool
   })
   default = {
-    data_platform   = true
-    gke             = true
+    data_platform   = false
+    gke             = false
     project_factory = true
     sandbox         = true
     teams           = true
@@ -139,7 +139,7 @@ variable "groups" {
     # Checklist, so by default we map gcp-support to gcp-devops.
     # However, we recommend creating gcp-support and updating the
     # value in the following line
-    gcp-support = "onqlave-support"
+    gcp-support             = "onqlave-support"
   }
 }
 
@@ -164,8 +164,8 @@ variable "locations" {
     pubsub  = list(string)
   })
   default = {
-    bq      = "EU"
-    gcs     = "EU"
+    bq      = "australia-southeast1"
+    gcs     = "australia-southeast1"
     logging = "global"
     pubsub  = []
   }
