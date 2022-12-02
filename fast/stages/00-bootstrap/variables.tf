@@ -105,7 +105,7 @@ variable "fast_features" {
     data_platform   = false
     gke             = false
     project_factory = true
-    sandbox         = true
+    sandbox         = false
     teams           = true
   }
   nullable = false

@@ -95,6 +95,7 @@ module "automation-tf-output-gcs" {
   storage_class = local.gcs_storage_class
   versioning    = true
   depends_on    = [module.organization]
+  force_destroy = true
 }
 
 # this stage's bucket and service account
@@ -108,6 +109,7 @@ module "automation-tf-bootstrap-gcs" {
   storage_class = local.gcs_storage_class
   versioning    = true
   depends_on    = [module.organization]
+  force_destroy = true
 }
 
 module "automation-tf-bootstrap-sa" {
@@ -174,6 +176,7 @@ module "automation-tf-resman-gcs" {
     "roles/storage.objectAdmin" = [module.automation-tf-resman-sa.iam_email]
   }
   depends_on = [module.organization]
+  force_destroy = true
 }
 
 module "automation-tf-resman-sa" {
