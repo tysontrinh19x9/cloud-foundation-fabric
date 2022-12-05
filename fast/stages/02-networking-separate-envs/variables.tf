@@ -89,12 +89,12 @@ variable "l7ilb_subnets" {
   })))
   default = {
     prod = [
-      { ip_cidr_range = "10.128.92.0/24", region = "europe-west1" },
-      { ip_cidr_range = "10.128.93.0/24", region = "europe-west4" }
+      { ip_cidr_range = "10.128.92.0/24", region = "australia-southeast1" }
+      # { ip_cidr_range = "10.128.93.0/24", region = "europe-west4" }
     ]
     dev = [
-      { ip_cidr_range = "10.128.60.0/24", region = "europe-west1" },
-      { ip_cidr_range = "10.128.61.0/24", region = "europe-west4" }
+      { ip_cidr_range = "10.128.60.0/24", region = "australia-southeast1" }
+      # { ip_cidr_range = "10.128.61.0/24", region = "europe-west4" }
     ]
   }
 }
@@ -220,66 +220,67 @@ variable "vpn_onprem_configs" {
       vpn_gateway_interface           = number
     }))
   }))
-  default = {
-    dev-ew1 = {
-      adv = {
-        default = false
-        custom = [
-          "cloud_dns", "googleapis_private", "googleapis_restricted", "gcp_dev"
-        ]
-      }
-      peer_external_gateway = {
-        redundancy_type = "SINGLE_IP_INTERNALLY_REDUNDANT"
-        interfaces = [
-          { id = 0, ip_address = "8.8.8.8" },
-        ]
-      }
-      tunnels = [
-        {
-          peer_asn                        = 65544
-          peer_external_gateway_interface = 0
-          secret                          = "foobar"
-          session_range                   = "169.254.1.0/30"
-          vpn_gateway_interface           = 0
-        },
-        {
-          peer_asn                        = 65544
-          peer_external_gateway_interface = 0
-          secret                          = "foobar"
-          session_range                   = "169.254.1.4/30"
-          vpn_gateway_interface           = 1
-        }
-      ]
-    }
-    prod-ew1 = {
-      adv = {
-        default = false
-        custom = [
-          "cloud_dns", "googleapis_private", "googleapis_restricted", "gcp_prod"
-        ]
-      }
-      peer_external_gateway = {
-        redundancy_type = "SINGLE_IP_INTERNALLY_REDUNDANT"
-        interfaces = [
-          { id = 0, ip_address = "8.8.8.8" },
-        ]
-      }
-      tunnels = [
-        {
-          peer_asn                        = 65543
-          peer_external_gateway_interface = 0
-          secret                          = "foobar"
-          session_range                   = "169.254.1.0/30"
-          vpn_gateway_interface           = 0
-        },
-        {
-          peer_asn                        = 65543
-          peer_external_gateway_interface = 0
-          secret                          = "foobar"
-          session_range                   = "169.254.1.4/30"
-          vpn_gateway_interface           = 1
-        }
-      ]
-    }
-  }
+  default = null
+  # default = {
+  #   dev-ew1 = {
+  #     adv = {
+  #       default = false
+  #       custom = [
+  #         "cloud_dns", "googleapis_private", "googleapis_restricted", "gcp_dev"
+  #       ]
+  #     }
+  #     peer_external_gateway = {
+  #       redundancy_type = "SINGLE_IP_INTERNALLY_REDUNDANT"
+  #       interfaces = [
+  #         { id = 0, ip_address = "8.8.8.8" },
+  #       ]
+  #     }
+  #     tunnels = [
+  #       {
+  #         peer_asn                        = 65544
+  #         peer_external_gateway_interface = 0
+  #         secret                          = "foobar"
+  #         session_range                   = "169.254.1.0/30"
+  #         vpn_gateway_interface           = 0
+  #       },
+  #       {
+  #         peer_asn                        = 65544
+  #         peer_external_gateway_interface = 0
+  #         secret                          = "foobar"
+  #         session_range                   = "169.254.1.4/30"
+  #         vpn_gateway_interface           = 1
+  #       }
+  #     ]
+  #   }
+  #   prod-ew1 = {
+  #     adv = {
+  #       default = false
+  #       custom = [
+  #         "cloud_dns", "googleapis_private", "googleapis_restricted", "gcp_prod"
+  #       ]
+  #     }
+  #     peer_external_gateway = {
+  #       redundancy_type = "SINGLE_IP_INTERNALLY_REDUNDANT"
+  #       interfaces = [
+  #         { id = 0, ip_address = "8.8.8.8" },
+  #       ]
+  #     }
+  #     tunnels = [
+  #       {
+  #         peer_asn                        = 65543
+  #         peer_external_gateway_interface = 0
+  #         secret                          = "foobar"
+  #         session_range                   = "169.254.1.0/30"
+  #         vpn_gateway_interface           = 0
+  #       },
+  #       {
+  #         peer_asn                        = 65543
+  #         peer_external_gateway_interface = 0
+  #         secret                          = "foobar"
+  #         session_range                   = "169.254.1.4/30"
+  #         vpn_gateway_interface           = 1
+  #       }
+  #     ]
+  #   }
+  # }
 }

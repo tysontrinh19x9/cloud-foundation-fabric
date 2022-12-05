@@ -45,12 +45,12 @@ variable "groups" {
   type        = map(string)
   # https://cloud.google.com/docs/enterprise/setup-checklist
   default = {
-    gcp-billing-admins      = "gcp-billing-admins",
-    gcp-devops              = "gcp-devops",
-    gcp-network-admins      = "gcp-network-admins"
-    gcp-organization-admins = "gcp-organization-admins"
-    gcp-security-admins     = "gcp-security-admins"
-    gcp-support             = "gcp-support"
+    gcp-billing-admins      = "onqlave-billing-admins",
+    gcp-devops              = "onqlave-devops",
+    gcp-network-admins      = "onqlave-network-admins"
+    gcp-organization-admins = "onqlave-organization-admins"
+    gcp-security-admins     = "onqlave-security-admins"
+    gcp-support             = "onqlave-support"
   }
 }
 
@@ -61,7 +61,7 @@ variable "kms_defaults" {
     rotation_period = string
   })
   default = {
-    locations       = ["europe", "europe-west1", "europe-west3", "global"]
+    locations       = ["australia-southeast1"]
     rotation_period = "7776000s"
   }
 }

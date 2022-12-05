@@ -26,8 +26,8 @@ locals {
     })]
   }
   region_trigram = {
-    europe-west1 = "ew1"
-    europe-west3 = "ew3"
+    australia-southeast1 = "ase1"
+    # europe-west3 = "ew3"
   }
   stage3_sas_delegated_grants = [
     "roles/composer.sharedVpcAgent",
