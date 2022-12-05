@@ -21,7 +21,7 @@ billing_alert:
 #   - matt@onqlave.com
 
 # Folder the project will be created as children of
-folder_id: folders/468287933712
+folder_id: folders/191291233992
 
 # [opt] Authoritative IAM bindings in group => [roles] format
 group_iam:
@@ -44,17 +44,17 @@ kms_service_agents:
 
 # [opt] Labels for the project - merged with the ones defined in defaults
 labels:
-  environment: dev
-  application: dataplane
+  environment: production
+  application: controlplane
 
 # [opt] Org policy overrides defined at project level
 org_policies:
   constraints/compute.disableGuestAttributesAccess:
     enforce: true
-  constraints/compute.trustedImageProjects:
-    allow:
-      values:
-        - projects/onqlave-dev-iac-core-0
+  # constraints/compute.trustedImageProjects:
+  #   allow:
+  #     values:
+  #       - projects/onqlave-dev-iac-core-0
   constraints/compute.vmExternalIpAccess:
     deny:
       all: true
@@ -91,10 +91,10 @@ vpc:
     enable_security_admin: false
 
   # Host project the project will be service project of
-  host_project: onqlave-dev-net-spoke-0
+  host_project: onqlave-prod-net-spoke-0
 
   # [opt] Subnets in the host project where principals will be granted networkUser
   # in region/subnet-name => [principals]
   subnets_iam:
-    australia-southeast1/dev-default-ase1:
+    australia-southeast1/prod-default-ase1:
       - group:onqlave-devops@onqlave.com

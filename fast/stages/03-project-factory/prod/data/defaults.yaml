@@ -4,7 +4,7 @@ billing_account_id: 01FF42-62CE82-5861FD
 
 # [opt] Setup for billing alerts
 billing_alert:
-  amount: 2500
+  amount: 7000
   thresholds:
     current: [0.5, 0.8]
     forecasted: [0.5, 0.8]
@@ -15,7 +15,7 @@ essential_contacts: ["matt@onqlave.com"]
 
 # [opt] Labels set for all projects
 labels:
-  environment: development
+  environment: production
   team: engineering
 
 # [opt] Additional notification channels for billing
