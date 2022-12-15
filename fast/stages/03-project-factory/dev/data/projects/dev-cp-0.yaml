@@ -28,6 +28,10 @@ group_iam:
   onqlave-devops@onqlave.com:
     - roles/compute.admin
     - roles/resourcemanager.projectIamAdmin
+    - roles/cloudsql.admin
+    - roles/redis.admin
+    - roles/container.admin
+    - roles/iam.serviceAccountUser
     # - roles/resourcemanager.projectCreator
 
 # [opt] Authoritative IAM bindings in role => [principals] format
