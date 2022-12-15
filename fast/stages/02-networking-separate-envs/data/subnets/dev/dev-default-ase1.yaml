@@ -3,3 +3,6 @@
 region: australia-southeast1
 ip_cidr_range: 10.128.32.0/24
 description: Default subnet for dev
+secondary_ip_ranges:
+   pods: 10.132.0.0/14
+   services: 10.128.128.0/20
