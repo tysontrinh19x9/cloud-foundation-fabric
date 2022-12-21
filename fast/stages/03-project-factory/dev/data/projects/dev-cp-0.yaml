@@ -33,7 +33,7 @@ group_iam:
     - roles/container.admin
     - roles/iam.serviceAccountUser
     - roles/storage.admin
-    # - roles/resourcemanager.projectCreator
+    - roles/iam.serviceAccountAdmin
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
