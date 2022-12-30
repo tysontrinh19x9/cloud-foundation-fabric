@@ -34,6 +34,8 @@ group_iam:
     - roles/iam.serviceAccountUser
     - roles/storage.admin
     - roles/iam.serviceAccountAdmin
+    - roles/serviceusage.serviceUsageAdmin
+    - roles/artifactregistry.admin
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project

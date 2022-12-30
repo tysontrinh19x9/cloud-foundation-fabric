@@ -131,36 +131,33 @@ variable "psa_ranges" {
   type = object({
     dev = object({
       ranges = map(string)
-      routes = object({
-        export = bool
-        import = bool
-      })
+      export_routes = optional(bool, false)
+      import_routes = optional(bool, false)
     })
     prod = object({
       ranges = map(string)
-      routes = object({
-        export = bool
-        import = bool
-      })
+      export_routes = optional(bool, false)
+      import_routes = optional(bool, false)
     })
   })
-  default = null
-  # default = {
-  #   dev = {
-  #     ranges = {
-  #       cloudsql-mysql     = "10.128.62.0/24"
-  #       cloudsql-sqlserver = "10.128.63.0/24"
-  #     }
-  #     routes = null
-  #   }
-  #   prod = {
-  #     ranges = {
-  #       cloudsql-mysql     = "10.128.94.0/24"
-  #       cloudsql-sqlserver = "10.128.95.0/24"
-  #     }
-  #     routes = null
-  #   }
-  # }
+  default = {
+     dev = {
+       ranges = {
+         cloudsql     = "10.128.62.0/24"
+#         cloudsql-sqlserver = "10.128.63.0/24"
+       }
+      export_routes = true
+      import_routes = true
+     }
+     prod = {
+       ranges = {
+         cloudsql     = "10.128.94.0/24"
+#         cloudsql-sqlserver = "10.128.95.0/24"
+       }
+      export_routes = false
+      import_routes = false
+     }
+  }
 }
 
 variable "router_onprem_configs" {
