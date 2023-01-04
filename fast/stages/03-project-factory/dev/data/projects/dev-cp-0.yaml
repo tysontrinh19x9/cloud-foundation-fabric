@@ -63,9 +63,9 @@ org_policies:
   #     values:
   #       - projects/onqlave-dev-iac-core-0
   constraints/compute.vmExternalIpAccess:
-    deny:
-      all: true
-
+      allow:
+        values:
+          - projects/onqlave-dev-cp-0/zones/australia-southeast1-a/instances/onqlave-dev-cp-bastion-0
 # [opt] Service account to create for the project and their roles on the project
 # in name => [roles] format
 # service_accounts:
