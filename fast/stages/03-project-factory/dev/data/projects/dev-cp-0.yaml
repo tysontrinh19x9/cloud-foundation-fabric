@@ -36,6 +36,7 @@ group_iam:
     - roles/iam.serviceAccountAdmin
     - roles/serviceusage.serviceUsageAdmin
     - roles/artifactregistry.admin
+    - roles/logging.admin
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
@@ -95,7 +96,7 @@ vpc:
     enable_host_service_agent: true
 
     # Grants  "roles/compute.securityAdmin" to the container robot if set
-    enable_security_admin: false
+    enable_security_admin: true
 
   # Host project the project will be service project of
   host_project: onqlave-dev-net-spoke-0
