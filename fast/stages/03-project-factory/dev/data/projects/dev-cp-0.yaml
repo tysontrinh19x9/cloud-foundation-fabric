@@ -67,6 +67,14 @@ org_policies:
       allow:
         values:
           - projects/onqlave-dev-cp-0/zones/australia-southeast1-a/instances/onqlave-dev-cp-bastion-0
+  constraints/compute.restrictLoadBalancerCreationForTypes:
+      allow:
+        values:
+          - EXTERNAL_HTTP_HTTPS
+          - INTERNAL_HTTP_HTTPS
+          - INTERNAL_TCP_UDP
+          - REGIONAL_INTERNAL_MANAGED_TCP_PROXY
+          - in:INTERNAL
 # [opt] Service account to create for the project and their roles on the project
 # in name => [roles] format
 # service_accounts:
