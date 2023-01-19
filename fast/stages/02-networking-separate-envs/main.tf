@@ -34,6 +34,7 @@ locals {
     "roles/compute.networkUser",
     "roles/container.hostServiceAgentUser",
     "roles/vpcaccess.user",
+    "roles/compute.securityAdmin"
   ]
   service_accounts = {
     for k, v in coalesce(var.service_accounts, {}) : k => "serviceAccount:${v}" if v != null
