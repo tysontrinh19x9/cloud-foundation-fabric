@@ -94,6 +94,7 @@ services:
   - iap.googleapis.com
   - oslogin.googleapis.com
   - storage-api.googleapis.com
+  - beyondcorp.googleapis.com
 
 # [opt] Roles to assign to the service identities in service => [roles] format
 service_identities_iam:
