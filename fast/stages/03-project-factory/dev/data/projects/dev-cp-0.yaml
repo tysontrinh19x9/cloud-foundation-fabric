@@ -39,7 +39,6 @@ group_iam:
     - roles/logging.admin
     - roles/iap.admin
     - roles/oauthconfig.editor
-    - roles/beyondcorp.admin
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
