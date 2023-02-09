@@ -31,7 +31,6 @@ group_iam:
     - roles/cloudsql.admin
     - roles/redis.admin
     - roles/container.admin
-    - roles/iam.serviceAccountUser
     - roles/storage.admin
     - roles/iam.serviceAccountAdmin
     - roles/serviceusage.serviceUsageAdmin
@@ -45,9 +44,11 @@ group_iam:
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
-# iam:
-#   roles/compute.admin:
-#     - serviceAccount:service-account
+iam:
+  roles/iam.serviceAccountUser:
+    - serviceAccount:onqlave-dev-cp-0-bastion@onqlave-dev-cp-0.iam.gserviceaccount.com
+  roles/iap.tunnelResourceAccessor:
+    - serviceAccount:onqlave-dev-cp-0-bastion@onqlave-dev-cp-0.iam.gserviceaccount.com
 
 # [opt] Service robots and keys they will be assigned as cryptoKeyEncrypterDecrypter
 # in service => [keys] format
@@ -99,6 +100,8 @@ services:
   - beyondcorp.googleapis.com
   - iamcredentials.googleapis.com
   - serviceusage.googleapis.com
+  - networkmanagement.googleapis.com
+  - cloudresourcemanager.googleapis.com
 
 # [opt] Roles to assign to the service identities in service => [roles] format
 service_identities_iam:
