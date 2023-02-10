@@ -50,6 +50,8 @@ iam:
     - serviceAccount:onqlave-dev-cp-0-bastion@onqlave-dev-cp-0.iam.gserviceaccount.com
   roles/iap.tunnelResourceAccessor:
     - serviceAccount:onqlave-dev-cp-0-bastion@onqlave-dev-cp-0.iam.gserviceaccount.com
+  roles/container.admin:
+    - serviceAccount:onqlave-dev-cp-0-bastion@onqlave-dev-cp-0.iam.gserviceaccount.com
 
 # [opt] Service robots and keys they will be assigned as cryptoKeyEncrypterDecrypter
 # in service => [keys] format
