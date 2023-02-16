@@ -42,6 +42,7 @@ group_iam:
     - roles/iap.tunnelResourceAccessor
     - roles/iam.workloadIdentityPoolAdmin
     - roles/iam.serviceAccountUser
+    - roles/pubsub.admin
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
