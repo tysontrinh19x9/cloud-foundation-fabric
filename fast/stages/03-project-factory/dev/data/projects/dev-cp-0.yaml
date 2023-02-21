@@ -29,16 +29,13 @@ group_iam:
     - roles/compute.admin
     - roles/resourcemanager.projectIamAdmin
     - roles/cloudsql.admin
-    - roles/redis.admin
+#    - roles/redis.admin
     - roles/container.admin
     - roles/storage.admin
     - roles/iam.serviceAccountAdmin
     - roles/serviceusage.serviceUsageAdmin
     - roles/artifactregistry.admin
-    - roles/logging.admin
     - roles/iap.admin
-    - roles/oauthconfig.editor
-    - roles/beyondcorp.admin
     - roles/iap.tunnelResourceAccessor
     - roles/iam.workloadIdentityPoolAdmin
     - roles/iam.serviceAccountUser
