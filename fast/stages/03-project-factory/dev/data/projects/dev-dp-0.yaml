@@ -28,7 +28,17 @@ group_iam:
   onqlave-devops@onqlave.com:
     - roles/compute.admin
     - roles/resourcemanager.projectIamAdmin
-    # - roles/resourcemanager.projectCreator
+    - roles/cloudsql.admin
+    - roles/container.admin
+    - roles/storage.admin
+    - roles/iam.serviceAccountAdmin
+    - roles/serviceusage.serviceUsageAdmin
+    - roles/artifactregistry.admin
+    - roles/iap.admin
+    - roles/iap.tunnelResourceAccessor
+    - roles/iam.workloadIdentityPoolAdmin
+    - roles/iam.serviceAccountUser
+    - roles/pubsub.admin
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
@@ -76,6 +86,14 @@ services:
   - storage.googleapis.com
   - stackdriver.googleapis.com
   - compute.googleapis.com
+  - iap.googleapis.com
+  - oslogin.googleapis.com
+  - storage-api.googleapis.com
+  - beyondcorp.googleapis.com
+  - iamcredentials.googleapis.com
+  - serviceusage.googleapis.com
+  - networkmanagement.googleapis.com
+  - cloudresourcemanager.googleapis.com
 
 # [opt] Roles to assign to the service identities in service => [roles] format
 service_identities_iam:
