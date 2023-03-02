@@ -42,9 +42,13 @@ group_iam:
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
-# iam:
-#   roles/compute.admin:
-#     - serviceAccount:service-account
+iam:
+  roles/iam.serviceAccountUser:
+    - serviceAccount:onqlave-dev-dp-bastion-0@onqlave-dev-dp-0.iam.gserviceaccount.com
+  roles/iap.tunnelResourceAccessor:
+    - serviceAccount:onqlave-dev-dp-bastion-0@onqlave-dev-dp-0.iam.gserviceaccount.com
+  roles/container.admin:
+    - serviceAccount:onqlave-dev-dp-bastion-0@onqlave-dev-dp-0.iam.gserviceaccount.com
 
 # [opt] Service robots and keys they will be assigned as cryptoKeyEncrypterDecrypter
 # in service => [keys] format
@@ -94,6 +98,7 @@ services:
   - serviceusage.googleapis.com
   - networkmanagement.googleapis.com
   - cloudresourcemanager.googleapis.com
+  - artifactregistry.googleapis.com
 
 # [opt] Roles to assign to the service identities in service => [roles] format
 service_identities_iam:
