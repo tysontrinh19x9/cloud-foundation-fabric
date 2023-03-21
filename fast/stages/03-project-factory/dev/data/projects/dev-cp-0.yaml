@@ -109,6 +109,7 @@ services:
   - container.googleapis.com
   - servicenetworking.googleapis.com
   - firebase.googleapis.com
+  - sqladmin.googleapis.com # Used by Cloud-SQL-Proxy into GKE.
 
 # [opt] Roles to assign to the service identities in service => [roles] format
 service_identities_iam:
