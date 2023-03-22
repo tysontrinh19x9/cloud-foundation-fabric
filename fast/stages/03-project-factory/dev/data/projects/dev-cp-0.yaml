@@ -102,6 +102,7 @@ services:
   - oslogin.googleapis.com
   - storage-api.googleapis.com
   - beyondcorp.googleapis.com
+  - artifactregistry.googleapis.com
   - iamcredentials.googleapis.com
   - serviceusage.googleapis.com
   - networkmanagement.googleapis.com
