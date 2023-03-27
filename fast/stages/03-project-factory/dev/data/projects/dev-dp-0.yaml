@@ -42,6 +42,11 @@ group_iam:
     - roles/redis.admin
     - roles/cloudkms.admin
 
+  onqlave-developers@onqlave.com:
+    - roles/iam.serviceAccountUser
+    - roles/iap.tunnelResourceAccessor
+    - roles/compute.instanceAdmin
+
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
 iam:
@@ -50,6 +55,8 @@ iam:
   roles/iap.tunnelResourceAccessor:
     - serviceAccount:onqlave-dev-dp-bastion-0@onqlave-dev-dp-0.iam.gserviceaccount.com
   roles/container.admin:
+    - serviceAccount:onqlave-dev-dp-bastion-0@onqlave-dev-dp-0.iam.gserviceaccount.com
+  roles/compute.instanceAdmin:
     - serviceAccount:onqlave-dev-dp-bastion-0@onqlave-dev-dp-0.iam.gserviceaccount.com
 
 # [opt] Service robots and keys they will be assigned as cryptoKeyEncrypterDecrypter
@@ -72,8 +79,17 @@ org_policies:
   #     values:
   #       - projects/onqlave-dev-iac-core-0
   constraints/compute.vmExternalIpAccess:
-    deny:
-      all: true
+    allow:
+      values:
+        - projects/onqlave-dev-dp-0/zones/australia-southeast1-a/instances/onqlave-dev-dp-bastion-0
+  constraints/compute.restrictLoadBalancerCreationForTypes:
+    allow:
+      values:
+        - EXTERNAL_HTTP_HTTPS
+        - INTERNAL_HTTP_HTTPS
+        - INTERNAL_TCP_UDP
+        - REGIONAL_INTERNAL_MANAGED_TCP_PROXY
+        - in:INTERNAL
 
 # [opt] Service account to create for the project and their roles on the project
 # in name => [roles] format
@@ -96,11 +112,12 @@ services:
   - oslogin.googleapis.com
   - storage-api.googleapis.com
   - beyondcorp.googleapis.com
+  - artifactregistry.googleapis.com
   - iamcredentials.googleapis.com
   - serviceusage.googleapis.com
   - networkmanagement.googleapis.com
   - cloudresourcemanager.googleapis.com
-  - artifactregistry.googleapis.com
+  - container.googleapis.com
   - servicenetworking.googleapis.com
   - cloudkms.googleapis.com
   - sqladmin.googleapis.com # Used by Cloud-SQL-Proxy into GKE.
