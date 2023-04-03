@@ -46,6 +46,7 @@ group_iam:
     - roles/iam.serviceAccountUser
     - roles/iap.tunnelResourceAccessor
     - roles/compute.instanceAdmin
+    - roles/container.developer
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
