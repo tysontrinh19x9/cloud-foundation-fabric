@@ -54,6 +54,8 @@ iam:
     - serviceAccount:onqlave-dev-cp-0-bastion@onqlave-dev-cp-0.iam.gserviceaccount.com
   roles/container.admin:
     - serviceAccount:onqlave-dev-cp-0-bastion@onqlave-dev-cp-0.iam.gserviceaccount.com
+  roles/compute.instanceAdmin:
+    - serviceAccount:onqlave-dev-cp-0-bastion@onqlave-dev-cp-0.iam.gserviceaccount.com
   roles/firebase.admin:
     - serviceAccount:onqlave-cp-0-firebase@onqlave-dev-cp-0.iam.gserviceaccount.com
 
