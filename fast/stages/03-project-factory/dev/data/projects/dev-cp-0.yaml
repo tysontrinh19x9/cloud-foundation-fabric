@@ -45,6 +45,7 @@ group_iam:
     - roles/iap.tunnelResourceAccessor
     - roles/compute.instanceAdmin
     - roles/container.developer
+    - roles/firebase.developAdmin
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
