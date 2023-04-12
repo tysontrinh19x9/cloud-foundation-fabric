@@ -94,11 +94,11 @@ org_policies:
 
 # [opt] Service account to create for the project and their roles on the project
 # in name => [roles] format
-service_accounts:
-  onqlave-cluster-manager:
-    - roles/compute.viewer
-    - roles/cloudkms.admin
-    - roles/container.developer
+#service_accounts:
+#  onqlave-cluster-manager:
+#    - roles/compute.viewer
+#    - roles/cloudkms.admin
+#    - roles/container.developer
 
 
 #   my-service-account:
