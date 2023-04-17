@@ -49,9 +49,17 @@ group_iam:
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
-# iam:
-#   roles/compute.admin:
-#     - serviceAccount:service-account
+iam:
+  roles/iam.serviceAccountUser:
+    - serviceAccount:onqlave-prod-cp-0-bastion@onqlave-prod-cp-0.iam.gserviceaccount.com
+  roles/iap.tunnelResourceAccessor:
+    - serviceAccount:onqlave-prod-cp-0-bastion@onqlave-prod-cp-0.iam.gserviceaccount.com
+  roles/container.admin:
+    - serviceAccount:onqlave-prod-cp-0-bastion@onqlave-prod-cp-0.iam.gserviceaccount.com
+  roles/compute.instanceAdmin:
+    - serviceAccount:onqlave-prod-cp-0-bastion@onqlave-prod-cp-0.iam.gserviceaccount.com
+  roles/firebase.admin:
+    - serviceAccount:onqlave-prod-cp-0-firebase@onqlave-prod-cp-0.iam.gserviceaccount.com
 
 # [opt] Service robots and keys they will be assigned as cryptoKeyEncrypterDecrypter
 # in service => [keys] format
