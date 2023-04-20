@@ -105,6 +105,7 @@ services:
   - servicenetworking.googleapis.com
   - cloudkms.googleapis.com
   - sqladmin.googleapis.com # Used by Cloud-SQL-Proxy into GKE.
+  - containersecurity.googleapis.com # Used by Container Vulnerability Scanning
 
 # [opt] Roles to assign to the service identities in service => [roles] format
 service_identities_iam:
