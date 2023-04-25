@@ -40,12 +40,15 @@ group_iam:
     - roles/iam.serviceAccountUser
     - roles/pubsub.admin
     - roles/firebase.admin
-  onqlave-developers@onqlave.com:
-    - roles/iam.serviceAccountUser
-    - roles/iap.tunnelResourceAccessor
-    - roles/compute.instanceAdmin
-    - roles/container.developer
-    - roles/firebase.developAdmin
+    - roles/containeranalysis.admin
+    - roles/containersecurity.viewer
+
+#  onqlave-developers@onqlave.com:
+#    - roles/iam.serviceAccountUser
+#    - roles/iap.tunnelResourceAccessor
+#    - roles/compute.instanceAdmin
+#    - roles/container.developer
+#    - roles/firebase.developAdmin
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
@@ -116,6 +119,7 @@ services:
   - firebase.googleapis.com
   - sqladmin.googleapis.com # Used by Cloud-SQL-Proxy into GKE.
   - containersecurity.googleapis.com # Used by Container Vulnerability Scanning
+  - containerscanning.googleapis.com  # Used by Artifact Registry - Container Scanning
 
 # [opt] Roles to assign to the service identities in service => [roles] format
 service_identities_iam:

@@ -41,6 +41,8 @@ group_iam:
     - roles/pubsub.admin
     - roles/redis.admin
     - roles/cloudkms.admin
+    - roles/containeranalysis.admin
+    - roles/containersecurity.viewer
 
   onqlave-developers@onqlave.com:
     - roles/iam.serviceAccountUser
@@ -123,6 +125,7 @@ services:
   - cloudkms.googleapis.com
   - sqladmin.googleapis.com # Used by Cloud-SQL-Proxy into GKE.
   - containersecurity.googleapis.com # Used by Container Vulnerability Scanning
+  - containerscanning.googleapis.com  # Used by Artifact Registry - Container Scanning
 
 # [opt] Roles to assign to the service identities in service => [roles] format
 service_identities_iam:

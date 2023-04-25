@@ -40,6 +40,9 @@ group_iam:
     - roles/iam.serviceAccountUser
     - roles/pubsub.admin
     - roles/firebase.admin
+    - roles/containeranalysis.admin
+    - roles/containersecurity.viewer
+
   onqlave-developers@onqlave.com:
     - roles/iam.serviceAccountUser
     - roles/iap.tunnelResourceAccessor
@@ -120,7 +123,8 @@ services:
   - servicenetworking.googleapis.com
   - firebase.googleapis.com
   - sqladmin.googleapis.com # Used by Cloud-SQL-Proxy into GKE.
-  - containersecurity.googleapis.com # Used by Container Vulnerability Scanning
+  - containersecurity.googleapis.com # Used by GKE Vulnerability Scanning
+  - containerscanning.googleapis.com  # Used by Artifact Registry - Container Scanning
 
 # [opt] Roles to assign to the service identities in service => [roles] format
 service_identities_iam:
