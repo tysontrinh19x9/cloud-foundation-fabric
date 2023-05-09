@@ -43,12 +43,12 @@ group_iam:
     - roles/containeranalysis.admin
     - roles/containersecurity.viewer
 
-#  onqlave-developers@onqlave.com:
-#    - roles/iam.serviceAccountUser
-#    - roles/iap.tunnelResourceAccessor
-#    - roles/compute.instanceAdmin
-#    - roles/container.developer
-#    - roles/firebase.developAdmin
+  onqlave-developers@onqlave.com:
+    - roles/iam.serviceAccountUser
+    - roles/iap.tunnelResourceAccessor
+    - roles/compute.instanceAdmin
+    - roles/container.developer
+    - roles/firebase.developAdmin
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
@@ -63,6 +63,9 @@ iam:
     - serviceAccount:onqlave-prod-cp-0-bastion@onqlave-prod-cp-0.iam.gserviceaccount.com
   roles/firebase.admin:
     - serviceAccount:onqlave-prod-cp-0-firebase@onqlave-prod-cp-0.iam.gserviceaccount.com
+  roles/serviceusage.serviceUsageAdmin:
+    - serviceAccount:onqlave-prod-cp-0-firebase@onqlave-prod-cp-0.iam.gserviceaccount.com
+
 
 # [opt] Service robots and keys they will be assigned as cryptoKeyEncrypterDecrypter
 # in service => [keys] format
