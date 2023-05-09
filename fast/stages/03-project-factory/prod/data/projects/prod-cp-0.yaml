@@ -49,6 +49,7 @@ group_iam:
     - roles/compute.instanceAdmin
     - roles/container.developer
     - roles/firebase.developAdmin
+    - roles/pubsub.editor
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
