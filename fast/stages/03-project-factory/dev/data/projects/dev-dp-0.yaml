@@ -43,12 +43,14 @@ group_iam:
     - roles/cloudkms.admin
     - roles/containeranalysis.admin
     - roles/containersecurity.viewer
+    - roles/monitoring.admin
 
   onqlave-developers@onqlave.com:
     - roles/iam.serviceAccountUser
     - roles/iap.tunnelResourceAccessor
     - roles/compute.instanceAdmin
     - roles/container.developer
+    - roles/monitoring.editor
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project
