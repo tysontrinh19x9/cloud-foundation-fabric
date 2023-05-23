@@ -42,6 +42,7 @@ group_iam:
     - roles/firebase.admin
     - roles/containeranalysis.admin
     - roles/containersecurity.viewer
+    - roles/monitoring.admin
 
   onqlave-developers@onqlave.com:
     - roles/iam.serviceAccountUser

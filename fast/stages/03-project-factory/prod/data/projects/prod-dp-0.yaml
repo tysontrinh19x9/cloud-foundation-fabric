@@ -43,6 +43,7 @@ group_iam:
     - roles/cloudkms.admin
     - roles/containeranalysis.admin
     - roles/containersecurity.viewer
+    - roles/monitoring.admin
 
   onqlave-developers@onqlave.com:
     - roles/iam.serviceAccountUser
