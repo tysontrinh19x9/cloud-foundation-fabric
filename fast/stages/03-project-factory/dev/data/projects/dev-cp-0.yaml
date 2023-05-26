@@ -129,6 +129,7 @@ services:
   - sqladmin.googleapis.com # Used by Cloud-SQL-Proxy into GKE.
   - containersecurity.googleapis.com # Used by GKE Vulnerability Scanning
   - containerscanning.googleapis.com  # Used by Artifact Registry - Container Scanning
+  - secretmanager.googleapis.com
 
 # [opt] Roles to assign to the service identities in service => [roles] format
 service_identities_iam:
