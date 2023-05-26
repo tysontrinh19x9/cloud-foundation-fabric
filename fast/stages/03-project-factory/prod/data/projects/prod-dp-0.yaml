@@ -44,6 +44,7 @@ group_iam:
     - roles/containeranalysis.admin
     - roles/containersecurity.viewer
     - roles/monitoring.admin
+    - roles/secretmanager.admin
 
   onqlave-developers@onqlave.com:
     - roles/iam.serviceAccountUser
