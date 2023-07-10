@@ -45,6 +45,8 @@ group_iam:
     - roles/containersecurity.viewer
     - roles/monitoring.admin
     - roles/secretmanager.admin
+    - roles/binaryauthorization.attestorsAdmin
+    - roles/binaryauthorization.policyAdmin
 
   onqlave-developers@onqlave.com:
     - roles/iam.serviceAccountUser

@@ -45,6 +45,8 @@ group_iam:
     - roles/monitoring.admin
     - roles/secretmanager.admin
     - roles/oauthconfig.editor
+    - roles/binaryauthorization.attestorsAdmin
+    - roles/binaryauthorization.policyAdmin
 
   onqlave-developers@onqlave.com:
     - roles/iam.serviceAccountUser
