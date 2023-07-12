@@ -45,6 +45,10 @@ group_iam:
     - roles/monitoring.admin
     - roles/secretmanager.admin
     - roles/oauthconfig.editor
+    - roles/binaryauthorization.attestorsAdmin
+    - roles/binaryauthorization.policyAdmin
+    - roles/cloudkms.admin
+    - roles/cloudkms.cryptoOperator
 
   onqlave-developers@onqlave.com:
     - roles/iam.serviceAccountUser
@@ -134,6 +138,8 @@ services:
   - secretmanager.googleapis.com # Used by Secret Manager
   - certificatemanager.googleapis.com # Used by SSL Managed of GKE
   - monitoring.googleapis.com # Used by all Cloud Monitoring services
+  - binaryauthorization.googleapis.com # Used by Binary Authorization
+  - cloudkms.googleapis.com
 
 # [opt] Roles to assign to the service identities in service => [roles] format
 service_identities_iam:

@@ -18,7 +18,7 @@
 
 
 locals {
-  _defaults = yamldecode(file(var.defaults_file))
+  _defaults     = yamldecode(file(var.defaults_file))
   _defaults_net = {
     billing_account_id   = var.billing_account.id
     environment_dns_zone = var.environment_dns_zone
@@ -27,8 +27,8 @@ locals {
   }
   defaults = merge(local._defaults, local._defaults_net)
   projects = {
-    for f in fileset("${var.data_dir}", "**/*.yaml") :
-    trimsuffix(f, ".yaml") => yamldecode(file("${var.data_dir}/${f}"))
+  for f in fileset("${var.data_dir}", "**/*.yaml") :
+  trimsuffix(f, ".yaml") => yamldecode(file("${var.data_dir}/${f}"))
   }
 }
 
@@ -42,8 +42,8 @@ module "projects" {
   dns_zones              = try(each.value.dns_zones, [])
   essential_contacts     = try(each.value.essential_contacts, [])
   folder_id              = try(each.value.folder_id, local.defaults.folder_id)
-  group_iam              = try(each.value.group_iam, {})
-  iam                    = try(each.value.iam, {})
+  group_iam_additive     = try(each.value.group_iam, {})
+  iam_additive           = try(each.value.iam, {})
   kms_service_agents     = try(each.value.kms, {})
   labels                 = try(each.value.labels, {})
   org_policies           = try(each.value.org_policies, null)
