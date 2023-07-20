@@ -41,6 +41,7 @@ group_iam:
     - roles/pubsub.admin
     - roles/redis.admin
     - roles/cloudkms.admin
+    - roles/cloudkms.cryptoOperator
     - roles/containeranalysis.admin
     - roles/containersecurity.viewer
     - roles/monitoring.admin
