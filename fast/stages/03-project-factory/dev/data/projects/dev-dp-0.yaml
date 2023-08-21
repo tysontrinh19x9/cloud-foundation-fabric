@@ -5,11 +5,11 @@ billing_account_id: 01FF42-62CE82-5861FD
 
 # [opt] Billing alerts config - overrides default if set
 billing_alert:
-  amount: 1000
+  amount: 200
   thresholds:
     current: [0.5, 0.8]
     forecasted: [0.5, 0.8]
-  credit_treatment: INCLUDE_ALL_CREDITS
+  credit_treatment: EXCLUDE_ALL_CREDITS
 
 # [opt] DNS zones to be created as children of the environment_dns_zone defined in defaults
 # dns_zones:
@@ -55,6 +55,7 @@ group_iam:
     - roles/compute.instanceAdmin
     - roles/container.developer
     - roles/monitoring.editor
+    - roles/cloudkms.admin
 
 # [opt] Authoritative IAM bindings in role => [principals] format
 # Generally used to grant roles to service accounts external to the project

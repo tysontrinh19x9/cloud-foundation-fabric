@@ -9,7 +9,7 @@ billing_alert:
   thresholds:
     current: [0.5, 0.8]
     forecasted: [0.5, 0.8]
-  credit_treatment: INCLUDE_ALL_CREDITS
+  credit_treatment: EXCLUDE_ALL_CREDITS
 
 # [opt] DNS zones to be created as children of the environment_dns_zone defined in defaults
 # dns_zones:
@@ -44,6 +44,12 @@ group_iam:
     - roles/containersecurity.viewer
     - roles/monitoring.admin
     - roles/secretmanager.admin
+    - roles/oauthconfig.editor
+    - roles/binaryauthorization.attestorsAdmin
+    - roles/binaryauthorization.policyAdmin
+    - roles/cloudkms.admin
+    - roles/cloudkms.cryptoOperator
+    - roles/containeranalysis.notes.occurrences.viewer
 
   onqlave-developers@onqlave.com:
     - roles/iam.serviceAccountUser
@@ -129,6 +135,8 @@ services:
   - secretmanager.googleapis.com # Used by Secret Manager
   - certificatemanager.googleapis.com # Used by SSL Managed of GKE
   - monitoring.googleapis.com # Used by all Cloud Monitoring services
+  - binaryauthorization.googleapis.com # Used by Binary Authorization
+  - cloudkms.googleapis.com
 
 # [opt] Roles to assign to the service identities in service => [roles] format
 service_identities_iam:
